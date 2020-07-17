@@ -1,0 +1,7 @@
+{
+  "name": "AngularImageFullScreenView",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
