@@ -13,8 +13,29 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-content>
+    <ion-list>
+      <ion-item *ngFor="let img of imageObject; let i = index" (click)="showLightbox(i)" >
+        <ion-thumbnail item-start>
+          <img src="{{img.thumbImage}}">
+          <br/>
+        </ion-thumbnail>
+      </ion-item>
+    </ion-list>
+    </ion-content>
+
+  
+  <!-- ng-image-fullscreen-view  -->
+  <ng-image-fullscreen-view
+          [images]="imageObject"
+          [imageIndex]="currentIndex"
+          [show]="showFlag"
+          [paginationShow]="true"
+          (close)="closeEventHandler()"
+          >
+  </ng-image-fullscreen-view>  
+
+
+
+
 </ion-content>
